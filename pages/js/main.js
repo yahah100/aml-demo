@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Load components with the 'load-component' attribute
-    document.querySelectorAll('[data-component]').forEach(container => {
+    // Load header component first
+    const headerContainer = document.querySelector('[data-component="pages/components/header.html"]');
+    
+    // Function to load a component
+    function loadComponent(container) {
         const componentPath = container.getAttribute('data-component');
         
-        fetch(componentPath)
+        return fetch(componentPath)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Failed to load component: ${componentPath}`);
@@ -27,5 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error(error);
                 container.innerHTML = `<div class="alert alert-danger">Error loading component: ${error.message}</div>`;
             });
-    });
+    }
+    
+    // First load header, then load all other components
+    if (headerContainer) {
+        loadComponent(headerContainer).then(() => {
+            // After header is loaded, load all other components
+            document.querySelectorAll('[data-component]:not([data-component="pages/components/header.html"])').forEach(container => {
+                loadComponent(container);
+            });
+        });
+    } else {
+        // If no header, load all components
+        document.querySelectorAll('[data-component]').forEach(container => {
+            loadComponent(container);
+        });
+    }
 }); 
