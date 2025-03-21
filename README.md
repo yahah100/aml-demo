@@ -15,6 +15,17 @@ This project showcases various data visualizations from the Applied Machine Lear
 
 You can view the visualizations on our GitHub Pages site: [https://[username].github.io/aml-demo](https://[username].github.io/aml-demo)
 
+### Automated Deployment
+
+This repository is configured with GitHub Actions to automatically deploy to GitHub Pages whenever changes are pushed to the main branch. No manual setup required!
+
+The workflow:
+1. Automatically builds and deploys the site
+2. Sets up the GitHub Pages configuration
+3. Makes the site available at the URL above
+
+If you want to manually trigger a deployment, you can use the "Actions" tab in the GitHub repository.
+
 ## Local Setup
 
 To view these visualizations locally:
@@ -31,6 +42,7 @@ To view these visualizations locally:
 - `ex_01_plots/`: Contains Matplotlib PNG visualizations
 - `ex_02_plots/`: Contains Plotly HTML visualizations for exercise 2
 - `ex_03_plots/`: Contains Plotly HTML visualizations for exercise 3
+- `.github/workflows/`: Contains GitHub Actions workflow for automated deployment
 
 ## Technologies Used
 
@@ -38,3 +50,4 @@ To view these visualizations locally:
 - Bootstrap for styling
 - Matplotlib for static visualizations
 - Plotly for interactive visualizations
+- GitHub Actions for automated deployment
