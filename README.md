@@ -1,53 +1,77 @@
-# Applied Machine Learning Visualization Project
+# AML Project: Welding Quality Prediction
 
-A visual summary of plots from the Applied Machine Learning lecture. This repository contains visualizations created with Plotly and Matplotlib during the course.
+## Project Description
 
-## Project Overview
+This project focuses on predicting welding quality based on time-series data of electrical current and voltage measurements. The analysis employs various machine learning techniques to extract meaningful features from welding process data, identify patterns through clustering, and build predictive models for quality classification.
 
-This project showcases various data visualizations from the Applied Machine Learning course, including:
+## Dataset Details
 
-- Welding sample analysis (Matplotlib)
-- Interactive welding sample visualization (Plotly)
-- 3D cluster analysis (Plotly)
-- 3D quality analysis (Plotly)
+- **Source**: [Zenodo Welding Dataset](https://zenodo.org/records/10017718)
+- **Content**: Current and voltage time series data from welding processes
+- **Sampling**: Synchronously sampled at 100 kHz frequency with maximum permissible error of 0.5%
+- **Size**: Approximately 362,034 samples
+- **Structure**: Each sample contains 200 time steps of both current and voltage measurements (shape: [samples, 200, 2])
 
-## GitHub Pages
+## Interactive Welding Data Visualization
+[View the interactive visualization](https://yahah100.github.io/aml-demo/)
 
-You can view the visualizations on our GitHub Pages site: [https://[username].github.io/aml-demo](https://[username].github.io/aml-demo)
+## Project Structure
 
-### Automated Deployment
+### Part 1: Data Processing and Exploration
+1. **Data Loading and Preprocessing (ex_01)**
+   - Reading and preprocessing raw welding data
+   - Converting time series into structured arrays
 
-This repository is configured with GitHub Actions to automatically deploy to GitHub Pages whenever changes are pushed to the main branch. No manual setup required!
+2. **Data Visualization and Analysis (ex_02)**
+   - Creating plots to understand data distribution
+   - Generating tables of statistical properties
+   - Visualizing time series characteristics
 
-The workflow:
-1. Automatically builds and deploys the site
-2. Sets up the GitHub Pages configuration
-3. Makes the site available at the URL above
+3. **Feature Extraction (ex_03)**
+   - Extracting meaningful features from time series
+   - Statistical features (mean, std, min, max, median)
+   - Frequency domain features (dominant frequencies)
+   - Power-related features
 
-If you want to manually trigger a deployment, you can use the "Actions" tab in the GitHub repository.
+4. **Clustering Analysis (ex_04)**
+   - Custom K-means implementation with multiple distance metrics
+     - Euclidean, Manhattan, and DTW (Dynamic Time Warping)
+   - Dimension reduction with PCA for visualization
+   - Cluster analysis to identify patterns in welding data
 
-## Local Setup
+### Part 2: Classification and Model Evaluation
+1. **Classification Models (ex_05)**
+   - Implementation of Random Forest classifier
+   - Feature importance analysis for quality prediction
+   - Hyperparameter tuning
 
-To view these visualizations locally:
+2. **Model Comparison**
+   - Evaluating different machine learning algorithms
+   - Performance metrics analysis
+   - Model selection based on accuracy and robustness
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/[username]/aml-demo.git
-   ```
+## Implementation Details
 
-2. Open `index.html` in your web browser to see all visualizations.
+- **Programming Language**: Python
+- **Key Libraries**: NumPy, Pandas, Scikit-learn, Matplotlib, Plotly, Seaborn
+- **Custom Implementation**: K-means algorithm with multiple distance metrics
+- **Interactive Visualization**: Web-based visualization for exploring welding data
 
-## Directory Structure
+## Current Progress
 
-- `ex_01_plots/`: Contains Matplotlib PNG visualizations
-- `ex_02_plots/`: Contains Plotly HTML visualizations for exercise 2
-- `ex_03_plots/`: Contains Plotly HTML visualizations for exercise 3
-- `.github/workflows/`: Contains GitHub Actions workflow for automated deployment
+- Data loading and preprocessing functionality is implemented
+- Feature extraction from time series data is operational
+- Custom K-means clustering with multiple distance metrics is implemented
+- Initial classification analysis with Random Forest is being performed
+- Feature importance analysis to identify key predictors of welding quality
 
-## Technologies Used
+## Future Work
 
-- HTML/CSS for the web page
-- Bootstrap for styling
-- Matplotlib for static visualizations
-- Plotly for interactive visualizations
-- GitHub Actions for automated deployment
+- Complete classification model development with hyperparameter optimization
+- Compare multiple classification algorithms to determine the most effective approach
+- Expand the interactive visualization capabilities for better data exploration
+- Potentially explore deep learning approaches for time series analysis
+
+
+
+
