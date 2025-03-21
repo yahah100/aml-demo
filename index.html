@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Applied Machine Learning Project</title>
+    <link rel="icon" type="image/png" href="pages/TMDT_Logo_small.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -16,6 +17,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            position: relative;
         }
         h1, h2, h3 {
             color: #0d6efd;
@@ -56,27 +58,28 @@
             color: #6c757d;
         }
         .logo-container {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;S
+            gap: 1rem;
         }
         
         .logo {
-            max-height: 80px;
+            max-height: 60px;
             width: auto;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="logo-container">
+            <img src="pages/TMDT_Logo_complete.png" alt="Logo 1" class="logo">
+            <img src="pages/BUW_Logo-schwarz.png" alt="Logo 2" class="logo">
+        </div>
+        
         <div class="header">
-            <div class="logo-container">
-                <img src="pages/TMDT_Logo_complete.png" alt="Logo 1" class="logo">
-                <img src="pages/BUW_Logo-schwarz.png" alt="Logo 2" class="logo">
-                <!-- Add more logos as needed -->
-            </div>
             <h1>Applied Machine Learning Project</h1>
             <p class="lead">Visualization and Analysis of Machine Learning Results</p>
         </div>
