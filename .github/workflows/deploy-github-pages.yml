@@ -5,10 +5,13 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# Add more comprehensive permissions
 permissions:
-  contents: read
+  contents: write  # Changed from read to write
   pages: write
   id-token: write
+  actions: write   # Added this permission
+  deployments: write  # Added this permission
 
 concurrency:
   group: "pages"
