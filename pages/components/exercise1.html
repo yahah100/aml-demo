@@ -1,11 +1,13 @@
 <div class="plot-container">
     <h3>Exercise 1: Welding Sample Analysis</h3>
     <div class="plot-description">
-        <p>This visualization shows analysis of a welding sample, providing insights into the welding quality parameters.</p>
+        <h4>Dataset Description</h4>
+        <p>The dataset consists of electrical measurements with two classes, showing an imbalanced distribution of 90,746 and 67,219 samples respectively. The data was collected across four different experiments, with varying sample sizes: 35,521, 17,913, 46,768, and 57,763 measurements.
+            The voltage measurements range from 0.07V to 101.49V, with a mean of 22.04V (±6.02V standard deviation) and a median of 20.84V. The current measurements show a wider spread, ranging from -1.18A to 614.15A, with a mean of 173.46A (±180.84A standard deviation) and a median of 68.59A. The substantial difference between the mean and median current values, along with the large standard deviation, suggests a right-skewed distribution with some high-current outliers.</p>
     </div>
     
     <div class="controls">
-        <label for="sample-selector">Select Welding Sample: </label>
+        <label for="sample-selector">Select sample plot of one welding cycle: </label>
         <select id="sample-selector" onchange="updateWeldingSample()">
             <option value="0">Sample 0</option>
             <option value="1">Sample 1</option>
